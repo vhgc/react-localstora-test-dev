@@ -8,7 +8,7 @@ export const TaskCreator = ({createTask}) => {
     e.preventDefault();
     createTask(newTaskName);
 
-    localStorage.setItem("tasks", newTaskName);
+    
     setNewTaskName('');
   };
   return (

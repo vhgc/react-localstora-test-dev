@@ -1,21 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import {TaskCreator} from "./components/TaskCreator";
 
 function App() {
 
-  const [tasksItems, setTasksItems] = useState([
-    {  name: 'Mi Tarea A', done:false },
-    {  name: 'Mi Tarea B', done:false },
-    {  name: 'Mi Tarea C', done:false },
-    {  name: 'Mi Tarea D', done:false },
-  ]);
+  const [tasksItems, setTasksItems] = useState([]);
 
   function createTask(taskName) {
     if (!tasksItems.find(task => task.name === taskName)) {
       setTasksItems([...tasksItems, { name: taskName, done: false }]);
     }
   }
+
+  useEffect(() => {
+    // Verificando Localstorage
+    const dataTask = localStorage.getItem('tasks');
+    if (dataTask) {
+      setTasksItems(JSON.parse(dataTask));
+    }
+  }, []);
+
+  useEffect(() => {
+    // Almacenando en Localstorage
+    localStorage.setItem('tasks', JSON.stringify(tasksItems));
+  }, [tasksItems]);
 
   return (
     <div className="App">
