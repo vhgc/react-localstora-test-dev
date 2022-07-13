@@ -35,35 +35,31 @@ function App() {
   }, [tasksItems]);
 
 
-  // const cleanTasksPP = () => {
-  //   console.log(',p');
-  //   setTasksItems(tasksItems.filter(t => !t.done));
-  //   setShowCompleted(false);
-  // }
-
   const cleanTasks = () => {
     setTasksItems(tasksItems.filter((task) => !task.done));
     setShowCompleted(false);
   };
 
   return (
-    <div className="App">
-      <TaskCreator createTask={createTask} />
-      <TaskTable tasks={tasksItems} toggleTask={toggleTask} />
+    <main className="bg-dark vh-100 text-white">
+      <div className="container p-4 col-md-4 offset-md-4">
+        <TaskCreator createTask={createTask} />
+        <TaskTable tasks={tasksItems} toggleTask={toggleTask} />
 
-      <VisibilityControl 
-        isChecked={showCompleted}
-        callback={(cheked) => setShowCompleted(cheked)}
-        cleanTasks={cleanTasks}
-      />
+        <VisibilityControl 
+          isChecked={showCompleted}
+          callback={(cheked) => setShowCompleted(cheked)}
+          cleanTasks={cleanTasks}
+        />
 
-      {
-        showCompleted === true && (
-          <TaskTable tasks={tasksItems} toggleTask={toggleTask} showCompleted={showCompleted} />
-        )
-      }
+        {
+          showCompleted === true && (
+            <TaskTable tasks={tasksItems} toggleTask={toggleTask} showCompleted={showCompleted} />
+          )
+        }
+      </div>
 
-    </div>
+    </main>
   );
 }
 
