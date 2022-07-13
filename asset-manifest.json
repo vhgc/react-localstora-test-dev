@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.fb0a886d.css",
-    "main.js": "/static/js/main.2142e5eb.js",
-    "index.html": "/index.html",
-    "main.fb0a886d.css.map": "/static/css/main.fb0a886d.css.map",
-    "main.2142e5eb.js.map": "/static/js/main.2142e5eb.js.map"
+    "main.css": "/https//vhgc.github.io/react-localstora-test-dev/static/css/main.fb0a886d.css",
+    "main.js": "/https//vhgc.github.io/react-localstora-test-dev/static/js/main.2142e5eb.js",
+    "index.html": "/https//vhgc.github.io/react-localstora-test-dev/index.html",
+    "main.fb0a886d.css.map": "/https//vhgc.github.io/react-localstora-test-dev/static/css/main.fb0a886d.css.map",
+    "main.2142e5eb.js.map": "/https//vhgc.github.io/react-localstora-test-dev/static/js/main.2142e5eb.js.map"
   },
   "entrypoints": [
     "static/css/main.fb0a886d.css",
